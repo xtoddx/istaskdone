@@ -380,3 +380,129 @@ Processing TasksController#update (for 127.0.0.1 at 2009-06-06 16:48:30) [PUT]
   [4;36;1mTask Update (0.2ms)[0m   [0;1mUPDATE "tasks" SET "complete" = 't', "updated_at" = '2009-06-06 20:48:30' WHERE "id" = 1[0m
 Rendering tasks/show
 Completed in 12ms (View: 0, DB: 0) | 200 OK [http://localhost/tasks/my-task]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-06-06 17:21:28) [GET]
+Rendering tasks/index
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-06-06 17:22:20) [GET]
+Rendering tasks/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TasksController#show (for 127.0.0.1 at 2009-06-06 17:22:24) [GET]
+  Parameters: {"id"=>"my-task2"}
+  [4;36;1mTask Load (0.9ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."slug" = 'my-task2') LIMIT 1[0m
+Redirected to http://localhost:3000/tasks/new?task%5Bname%5D=my+task2
+Completed in 39ms (DB: 1) | 302 Found [http://localhost/my-task2]
+
+
+Processing TasksController#new (for 127.0.0.1 at 2009-06-06 17:22:24) [GET]
+  Parameters: {"task"=>{"name"=>"my task2"}}
+Rendering tasks/new
+Completed in 82ms (View: 4, DB: 0) | 200 OK [http://localhost/tasks/new?task%5Bname%5D=my+task2]
+
+
+Processing TasksController#show (for 127.0.0.1 at 2009-06-06 17:22:29) [GET]
+  Parameters: {"id"=>"my-task"}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."slug" = 'my-task') LIMIT 1[0m
+Rendering tasks/show
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/my-task]
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2009-06-06 17:26:26) [GET]
+  Parameters: {"id"=>"my-task2"}
+
+SyntaxError (/mnt/bigdisk/home/todd/code/projects/istaskdone/app/controllers/tasks_controller.rb:28: syntax error, unexpected tIVAR, expecting ')'
+    @task.save
+         ^):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.0) lib/eventmachine.rb:224:in `run_machine'
+  eventmachine (0.12.0) lib/eventmachine.rb:224:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendered rescues/_trace (29.8ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#show (for 127.0.0.1 at 2009-06-06 17:26:42) [GET]
+  Parameters: {"id"=>"my-task2"}
+  [4;36;1mTask Load (0.2ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."slug" = 'my-task2') LIMIT 1[0m
+Redirected to http://localhost:3000/tasks/new?task%5Bname%5D=my+task2
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/my-task2]
+
+
+Processing TasksController#new (for 127.0.0.1 at 2009-06-06 17:26:42) [GET]
+  Parameters: {"task"=>{"name"=>"my task2"}}
+Rendering tasks/new
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/tasks/new?task%5Bname%5D=my+task2]
+
+
+Processing TasksController#create (for 127.0.0.1 at 2009-06-06 17:26:53) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"N0a2uHQ1MJRFsonOQcP/5MOtosYvA0L3rO5R0YWGIvA=", "task"=>{"name"=>"my task2", "webcode"=>"secret2"}}
+
+ActiveRecord::UnknownAttributeError (unknown attribute: cookie_code):
+  app/controllers/tasks_controller.rb:27:in `new'
+  app/controllers/tasks_controller.rb:27:in `create'
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.0) lib/eventmachine.rb:224:in `run_machine'
+  eventmachine (0.12.0) lib/eventmachine.rb:224:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendered rescues/_trace (114.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#create (for 127.0.0.1 at 2009-06-06 17:27:21) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"N0a2uHQ1MJRFsonOQcP/5MOtosYvA0L3rO5R0YWGIvA=", "task"=>{"name"=>"my task2", "webcode"=>"secret2"}}
+  [4;35;1mTask Create (0.5ms)[0m   [0mINSERT INTO "tasks" ("name", "slug", "updated_at", "webcode", "cookiecode", "complete", "created_at") VALUES('my task2', 'my-task2', '2009-06-06 21:27:21', 'secret2', 'BkyDAzrm9ZIQ4piosuzb', 'f', '2009-06-06 21:27:21')[0m
+Redirected to http://localhost:3000/my-task2
+Completed in 20ms (DB: 0) | 302 Found [http://localhost/tasks]
+
+
+Processing TasksController#show (for 127.0.0.1 at 2009-06-06 17:27:22) [GET]
+  Parameters: {"id"=>"my-task2"}
+  [4;36;1mTask Load (0.2ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."slug" = 'my-task2') LIMIT 1[0m
+Rendering tasks/show
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/my-task2]
+  [4;36;1mTask Load (0.2ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 2) [0m
+  [4;35;1mTask Load (0.9ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+  [4;36;1mTask Load (0.9ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 3) [0m
+
+
+Processing TasksController#show (for 127.0.0.1 at 2009-06-06 17:32:56) [GET]
+  Parameters: {"id"=>"my-task"}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."slug" = 'my-task') LIMIT 1[0m
+Rendering tasks/show
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/my-task]
+
+
+Processing TasksController#show (for 127.0.0.1 at 2009-06-06 17:32:59) [GET]
+  Parameters: {"id"=>"my-task2"}
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."slug" = 'my-task2') LIMIT 1[0m
+Rendering tasks/show
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/my-task2]

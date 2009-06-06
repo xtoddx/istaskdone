@@ -24,7 +24,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(params[:task])
+    @task = Task.new(params[:task].merge(:cookiecode => user_cookie_code))
     @task.save
 
     respond_to do |format|
@@ -60,4 +60,17 @@ class TasksController < ApplicationController
       end
     end
   end
+
+  private
+  def user_cookie_code
+    cookies['taskdone_code'] ||= generate_cookie_code
+  end
+
+  def generate_cookie_code
+    values = ('a'..'z').to_a + ('A'..'Z').to_a + ('0'..'9').to_a
+    rv = ''
+    20.times{ rv << values[rand(values.length)] }
+    rv
+  end
+
 end
