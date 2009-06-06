@@ -1,0 +1,5 @@
+<% form_for @task do |f| %>
+  <%= f.label :name %> <%= f.text_field :name %><br/>
+  <%= f.label :webcode, 'Access Code' %> <%= f.text_field :webcode %><br/>
+  <%= f.submit 'Create' %>
+<% end %>

@@ -1,0 +1,8 @@
+<%= @task.complete? ? 'DONE!' : 'INCOMPLETE' %>: <%= @task.name %>
+
+<% unless @task.complete? -%>
+  <% form_for @task do |f| %>
+    <%= f.hidden_field :complete, :value => true %>
+    <%= f.submit 'Complete' %>
+  <% end %>
+<% end -%>

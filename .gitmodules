@@ -1,0 +1,3 @@
+[submodule "vendor/plugins/slug_from"]
+	path = vendor/plugins/slug_from
+	url = git://github.com/rubidine/slug_from.git
