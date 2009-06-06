@@ -1,4 +1,5 @@
-<%= @task.complete? ? 'DONE!' : 'INCOMPLETE' %>: <%= @task.name %>
+<h1 class="task-name"><%= @task.name %></h1>
+<p class="status">Is currently <%= @task.complete? ? 'done!' : 'incomplete.' %></p>
 
 <% unless @task.complete? -%>
   <% form_for @task do |f| %>
@@ -6,6 +7,6 @@
     <% unless cookies['taskdone_code'] -%>
       <%= f.text_field :update_webcode, :value => 'secret' %>
     <% end -%>
-    <%= f.submit 'Complete' %>
+    <%= f.submit 'My task is complete.' %>
   <% end %>
 <% end -%>
