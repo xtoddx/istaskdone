@@ -49,7 +49,9 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.lookup(params[:id])
-    @task.update_attributes(params[:task])
+    @task.update_attributes(
+      params[:task].merge(:update_cookiecode => cookies['taskdone_code'])
+    )
 
     respond_to do |format|
       format.html do

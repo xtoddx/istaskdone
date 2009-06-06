@@ -1,11 +1,11 @@
 <%= @task.complete? ? 'DONE!' : 'INCOMPLETE' %>: <%= @task.name %>
 
-<h2>COOKIE</h2>
-<%= cookies.inspect %>
-
 <% unless @task.complete? -%>
   <% form_for @task do |f| %>
     <%= f.hidden_field :complete, :value => true %>
+    <% unless cookies['taskdone_code'] -%>
+      <%= f.text_field :update_webcode, :value => 'secret' %>
+    <% end -%>
     <%= f.submit 'Complete' %>
   <% end %>
 <% end -%>
