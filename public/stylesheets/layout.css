@@ -1,0 +1,104 @@
+/* @override 
+	http://0.0.0.0:3000/stylesheets/layout.css?1244321364
+	http://0.0.0.0:3000/stylesheets/layout.css?1244326667
+*/
+
+* {
+		margin:0;
+		padding:0;
+		}
+
+	html, body {
+		height:100%;
+		}
+
+	body {
+		background-color: #f4f2ec;
+		font:100.01%/1.4 sans-serif;
+		text-align:center; /* horizontal centering for IE Win quirks */
+		}
+
+	#distance { 
+		width:1px;
+		height:50%;
+		background-color:#fc6;
+		margin-bottom:-13.75em; /* half of container's height */
+		float:left;
+		}
+
+	#container {
+		margin:0 auto;
+		position:relative; /* puts container in front of distance */
+		text-align:left;
+		height:27.5em;
+		width:45em;
+		clear:left;
+
+		}
+
+	#container div {
+		font-size:80%;
+		float:right;
+		width:17em;
+		margin-left:2em;
+		}
+
+	#container div h2 {
+		font-size:120%;
+		font-weight:bold;
+		text-transform:uppercase;
+		margin:1em 0 0;
+		}
+
+	#container div h3 {
+		font-size:100%;
+		font-weight:bold;
+		margin:.5em 0 0 .75em;
+		}
+
+label {
+	font-size: 1em;
+	text-transform: uppercase;
+	margin-right: 1em;
+}
+
+p.status {
+	text-align: center;
+	color: #a49f90;
+}
+
+	#container ul {
+		margin-left:2em;
+		}
+
+	#container li span {
+		font-size:70%;
+		}
+		
+
+	#container h1 {
+		padding-top:2.4em;
+		margin-left: 0;
+	text-align: center;
+	font: 3.5em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	color: #3c300c;
+}
+
+	#container p {
+		}
+
+p.instructions {
+	text-align: center;
+}
+
+	address {
+		font-weight:normal;
+		font-size:80%;
+		font-style:normal;
+		text-align:right;
+		margin:0 20em 0 3em;
+		}
+
+#container form {
+	text-align: center;
+}
