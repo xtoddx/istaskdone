@@ -1,12 +1,10 @@
 <h1 class="task-name"><%= @task.name %></h1>
 <p class="status">Is currently <%= @task.complete? ? 'done!' : 'incomplete.' %></p>
 
-<% unless @task.complete? -%>
-  <% form_for @task do |f| %>
-    <%= f.hidden_field :complete, :value => true %>
-    <% unless cookies['taskdone_code'] -%>
-      <%= f.text_field :update_webcode, :value => 'secret' %>
-    <% end -%>
-    <%= f.submit 'My task is complete.' %>
-  <% end %>
-<% end -%>
+<% form_for @task do |f| %>
+  <%= f.hidden_field :complete, :value => @task.complete? ? '0' : '1' %>
+  <% unless cookies['taskdone_code'] -%>
+    <%= f.text_field :update_webcode, :value => 'secret' %>
+  <% end -%>
+  <%= f.submit @task.complete? ? 'Re-open task' : 'My task is complete.' %>
+<% end %>
