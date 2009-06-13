@@ -33,7 +33,7 @@ class TasksController < ApplicationController
           flash[:error] = "Unable to save task"
           render :action => 'new'
         else
-          redirect_to "/#{@task.slug}"
+          redirect_to "/#{@task.to_param}"
         end
       end
 
@@ -55,7 +55,7 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       format.html do
-        render :action => 'show'
+        redirect_to "/#{@task.to_param}"
       end
       format.xml do
         render :xml => @task
