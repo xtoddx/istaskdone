@@ -8,6 +8,13 @@ class Task < ActiveRecord::Base
 
   before_update :revert_changes_unless_access_code_match
 
+  def to_xml options={}, &block
+    unless options[:except] or options[:only]
+      options[:except] = [:cookiecode, :webcode]
+    end
+    super(options, &block)
+  end
+
   private
   def revert_changes_unless_access_code_match
     unless webcode_match? or cookiecode_match?
